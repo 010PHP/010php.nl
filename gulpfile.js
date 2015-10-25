@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var less = require('gulp-less');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
+var watch = require('gulp-watch');
 
 var nodeDir = 'node_modules';
 var lessPaths = [
@@ -21,6 +22,10 @@ gulp.task('less', function () {
             paths: lessPaths
         }))
         .pipe(gulp.dest('./web/css'));
+});
+
+gulp.task('watch', function() {
+    gulp.watch('./app/Resources/less/**/*.less', ['less']);
 });
 
 gulp.task('concat', function () {
