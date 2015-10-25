@@ -1,0 +1,32 @@
+var gulp = require('gulp');
+var less = require('gulp-less');
+var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
+
+var nodeDir = 'node_modules';
+var lessPaths = [
+    nodeDir + "/bootstrap-less/bootstrap",
+    nodeDir + "/font-awesome/less",
+    nodeDir + "/bootstrap-select/less"
+];
+var jsPaths = [
+    nodeDir + "/jquery/dist/jquery.min.js",
+    nodeDir + "/bootstrap-less/js/bootstrap.min.js",
+    nodeDir + "/bootstrap-select/dist/js/bootstrap-select.min.js"
+];
+
+gulp.task('less', function () {
+    return gulp.src('./app/Resources/less/**/*.less')
+        .pipe(less({
+            paths: lessPaths
+        }))
+        .pipe(gulp.dest('./web/css'));
+});
+
+gulp.task('concat', function() {
+    return gulp.src(jsPaths)
+        .pipe(concat('app.js'))
+        .pipe(gulp.dest('./web/js'));
+});
+
+gulp.task('default', ['less', 'concat']);
