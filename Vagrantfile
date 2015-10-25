@@ -16,9 +16,9 @@ Vagrant.configure("2") do |config|
     config.ssh.forward_agent = vagrant_config['vagrant_ssh_forward_agent']
     config.vm.hostname = vagrant_config['hostname']
     config.vm.provision "ansible" do |ansible|
-            ansible.playbook = "ansible/playbook.yml"
-            ansible.inventory_path = "ansible/inventories/local"
-            ansible.limit = 'adfysio'
-        end
+        ansible.playbook = "build/playbook.yml"
+        ansible.inventory_path = "build/inventories/local"
+        ansible.limit = 'development'
+    end
     config.vm.synced_folder "./", vagrant_config['vagrant_synced_folder']
 end

@@ -1,0 +1,2 @@
+- src: git+ssh://git@bitbucket.org/caroga/ansible-role-servertools.git
+  path: roles/

@@ -8,4 +8,3 @@ configs:
   vagrant_memory_size: '256'
   vagrant_ssh_forward_agent: 'true'
   vagrant_synced_folder: '/vagrant'
-
