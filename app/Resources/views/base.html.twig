@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>010PHP | The PHP User Group of Rotterdam!</title>
+    <title>{% block title %}010PHP | The PHP User Group of Rotterdam!{% endblock %}</title>
 
     <!-- Theme file -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -14,8 +14,14 @@
     <![endif]-->
 </head>
 <body>
-<h1>Hello, developers!!</h1>
-
+<div class="container">
+    <div class="row">
+        {% include(':layout:navbar.html.twig') %}
+    </div>
+</div>
+<div class="container">
+    {% block body %}{% endblock %}
+</div>
 <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
