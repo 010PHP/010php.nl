@@ -23,10 +23,18 @@ gulp.task('less', function () {
         .pipe(gulp.dest('./web/css'));
 });
 
-gulp.task('concat', function() {
+gulp.task('concat', function () {
     return gulp.src(jsPaths)
         .pipe(concat('app.js'))
         .pipe(gulp.dest('./web/js'));
 });
 
-gulp.task('default', ['less', 'concat']);
+gulp.task('fonts', function () {
+    gulp.src('./node_modules/font-awesome/fonts/**/*.{ttf,woff,eof,svg}')
+        .pipe(gulp.dest('./web/fonts'));
+
+    gulp.src('./node_modules/bootstrap-less/fonts/**/*.{ttf,woff,eof,svg}')
+        .pipe(gulp.dest('./web/fonts'));
+});
+
+gulp.task('default', ['less', 'concat','fonts']);
