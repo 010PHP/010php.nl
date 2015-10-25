@@ -20,5 +20,5 @@ Vagrant.configure("2") do |config|
         ansible.inventory_path = "build/inventories/local"
         ansible.limit = 'development'
     end
-    config.vm.synced_folder "./", vagrant_config['vagrant_synced_folder']
+    config.vm.synced_folder "./", vagrant_config['vagrant_synced_folder'], type: "nfs"
 end
