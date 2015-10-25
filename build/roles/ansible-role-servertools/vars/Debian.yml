@@ -11,3 +11,5 @@ __server_packages:
   - sshpass
   - tcpdump
   - telnet
+  - nodejs
+  - npm
