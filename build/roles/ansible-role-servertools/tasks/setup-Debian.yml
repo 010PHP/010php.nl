@@ -1,0 +1,4 @@
+---
+- name: Ensure System Packages are installed.
+  apt: "name={{ item }} state=latest"
+  with_items: server_packages

@@ -1,0 +1,13 @@
+---
+__server_packages:
+  - vim
+  - git
+  - htop
+  - iotop
+  - iftop
+  - curl
+  - wget
+  - python
+  - sshpass
+  - tcpdump
+  - telnet

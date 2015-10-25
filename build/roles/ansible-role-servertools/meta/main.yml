@@ -1,0 +1,22 @@
+---
+dependencies: []
+
+galaxy_info:
+  author: caroga
+  description: Tooling and server preparation
+  company: "Caroga"
+  license: "license (BSD, MIT)"
+  min_ansible_version: 1.4
+  platforms:
+  - name: EL
+    versions:
+    - 6
+    - 7
+  - name: Debian
+    versions:
+    - all
+  - name: Ubuntu
+    versions:
+    - all
+  categories:
+    - system
