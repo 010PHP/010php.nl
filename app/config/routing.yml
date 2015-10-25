@@ -1,3 +1,4 @@
-app:
-    resource: "@AppBundle/Controller/"
+oh_ten_php_website_site:
+    resource: "@OhTenPHPWebsiteSiteBundle/Controller/"
     type:     annotation
+    prefix:   /
