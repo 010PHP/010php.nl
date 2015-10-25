@@ -1,2 +1,14 @@
 - src: git+ssh://git@bitbucket.org/caroga/ansible-role-servertools.git
   path: roles/
+
+- src: geerlingguy.nginx
+  path: roles/
+
+- src: geerlingguy.php
+  path: roles/
+
+- src: geerlingguy.mysql
+  path: roles/
+
+- src: geerlingguy.composer
+  path: roles/
