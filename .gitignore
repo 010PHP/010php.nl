@@ -1,4 +1,8 @@
 /vendor/
+/node_modules/
+/app/logs/
+/app/cache/
+
 ### JetBrains ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio
 
