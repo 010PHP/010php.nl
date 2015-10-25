@@ -2,19 +2,6 @@
   - hosts: development
     sudo: yes
     vars:
-      - nginx_vhosts:
-          - listen: "80 default_server"
-            server_name: "010php.vm"
-            root: "/vagrant/public"
-            index: "app.php app_dev.php"
-            extra_parameters: |
-              location ~ \.php$ {
-                fastcgi_split_path_info ^(.+\.php)(/.+)$;
-                fastcgi_pass unix:/var/run/php5-fpm.sock;
-                fastcgi_index index.php;
-                fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-                include fastcgi_params;
-              }
       - mysql_root_password: root
       - mysql_databases:
         - name: 010php
@@ -31,3 +18,11 @@
       - { role: geerlingguy.php }
       - { role: geerlingguy.mysql }
       - { role: geerlingguy.composer }
+    tasks:
+      - name: Deploy nginx configuration
+        template: >
+          src=templates/vhost.j2
+          dest=/etc/nginx/sites-enabled/vhost.010php.conf
+
+      - name: Prevent composer install cannot allocate memory error.
+        shell: "/bin/dd if=/dev/zero of=/var/swap.1 bs=1M count=1024 && /sbin/mkswap /var/swap.1 && /sbin/swapon /var/swap.1"
