@@ -14,12 +14,14 @@
     <![endif]-->
 </head>
 <body>
-<div class="container">
-    <div class="row">
-        {% include(':layout:navbar.html.twig') %}
+<div class="container-fluid">
+    <div class="row orange-bar">
+        &nbsp;
     </div>
+
 </div>
-<div class="container">
+{% include(':layout:navbar.html.twig') %}
+<div class="container content-container">
     {% block body %}{% endblock %}
 </div>
 <script src="{{ asset('js/app.js') }}"></script>
