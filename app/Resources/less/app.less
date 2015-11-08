@@ -8,24 +8,70 @@
 @orange: #F15A29;
 @grey: #464646;
 
-.orange-bar {
-  background: @orange;
-  height: 10px;
-  border-bottom: 1px solid darken(@grey, 10%);
-  padding-top: 5px;
-}
-
-.logo {
-  height: 40px;
-  padding-top: 10px;
-}
-
 .text-shadow {
   -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=1, Direction=135, Color=#000000)";
   text-shadow: 1px 1px 1px #505050;
   filter: progid:DXImageTransform.Microsoft.Shadow(Strength=1, Direction=135, Color=#505050);
 }
 
-.content-container {
-  background: white;
+.navbar-xs {
+  min-height: 22px;
+  border-radius: 0;
+  background: lighten(@orange, 2%);
+  color: white;
+  border: 0;
+  margin-bottom: 0;
+
+  .navbar-brand {
+    padding: 2px 8px;
+    font-size: 14px;
+    line-height: 14px;
+  }
+  .navbar-nav > li > a {
+    color: white;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    line-height: 16px;
+    &:hover, &:active, &:focus {
+      background: lighten(@orange, 10%);
+      color: white;
+    }
+  }
+}
+
+.navbar-main {
+  min-height: 38px;
+  border-radius: 0;
+  background: lighten(@grey, 2%);
+  color: white;
+  border: 0;
+  margin-bottom: 0;
+
+  .navbar-brand {
+    padding: 2px 8px;
+    font-size: 14px;
+    line-height: 32px;
+  }
+
+  .navbar-nav > li > a {
+    color: white;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    line-height: 32px;
+    &:hover, &:active, &:focus {
+      background: lighten(@grey, 10%);
+      color: white;
+    }
+  }
+  .navbar-collapse {
+    padding-left:0;
+  }
+}
+
+header {
+  margin: 10px;
+  img {
+    width: 75%;
+    margin-top: 10px;
+  }
 }
