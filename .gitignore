@@ -2,6 +2,12 @@
 /node_modules/
 /app/logs/
 /app/cache/
+/app/bootstrap.php.cache
+/web/fonts
+/web/js
+/web/css
+/web/bundles
+/bin/phpunit
 
 ### JetBrains ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio
