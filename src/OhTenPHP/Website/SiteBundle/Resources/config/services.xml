@@ -1,12 +1,20 @@
 <?xml version="1.0" ?>
-
 <container xmlns="http://symfony.com/schema/dic/services"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
-
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
     <services>
+        <!--Service definitions-->
         <service id="app.twig.extension.date" class="Twig_Extensions_Extension_Date">
-            <tag name="twig.extension" />
+            <tag name="twig.extension"/>
         </service>
+
+        <service class="OhTenPHP\Website\SiteBundle\Services\TwitterService"
+                 id="oh_ten_php_website_site.services.twitter_service">
+            <call method="setTwitterClient">
+                <argument id="endroid.twitter" type="service"/>
+            </call>
+        </service>
+        <!--Service aliases-->
+        <service id="oh_ten_php_website_site.twitter" alias="oh_ten_php_website_site.services.twitter_service"/>
     </services>
 </container>
