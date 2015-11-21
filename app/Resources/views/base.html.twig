@@ -20,6 +20,7 @@
 <div class="container">
     <div class="col-lg-9">
         {% block body %}{% endblock %}
+        {% include(':layout:meetup.html.twig') %}
     </div>
     <div class="col-lg-3">
         {% include(':layout:sidebar.html.twig') %}

@@ -14,7 +14,14 @@
                 <argument id="endroid.twitter" type="service"/>
             </call>
         </service>
+        <service class="OhTenPHP\Website\SiteBundle\Services\MeetupService"
+                 id="oh_ten_php_website_site.services.meetup_service">
+            <factory class="DMS\Service\Meetup\MeetupKeyAuthClient" method="factory"/>
+            <argument>%meetup%</argument>
+        </service>
+
         <!--Service aliases-->
         <service id="oh_ten_php_website_site.twitter" alias="oh_ten_php_website_site.services.twitter_service"/>
+        <service id="oh_ten_php_website_site.meetup" alias="oh_ten_php_website_site.services.meetup_service"/>
     </services>
 </container>
