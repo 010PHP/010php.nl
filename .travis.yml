@@ -27,6 +27,7 @@ after_success:
   - tar -czf build.tgz build
   - export SSHPASS=$DEPLOY_PASS
   - sshpass -e scp -o stricthostkeychecking=no build.tgz $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH
+  - sshpass -e scp -o stricthostkeychecking=no ssh $DEPLOY_USER@$DEPLOY_HOST tar -xzf $DEPLOY_PATH/build.tgz -C $DEPLOY_PROD_PATH
 
 notifications:
   on_success: never
