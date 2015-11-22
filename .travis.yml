@@ -23,10 +23,10 @@ script:
 after_success:
   - export SYMFONY_ENV=prod && composer install --no-dev -o
   - mkdir build
-  - mv * build
+  - find . -maxdepth 1 | grep -vE "build|.|.."| xargs -i mv {} ./build
   - tar -czf build.tgz build
-  - export SSHPASS=$DEPLOY_PASSWORD
-  - sshpass -e scp -o stricthostkeychecking=no build.tgz $DEPLOY_USERNAME@$DEPLOY_SERVER:/$DEPLOY_PATH
+  - export SSHPASS=$DEPLOY_PASS
+  - sshpass -e scp -o stricthostkeychecking=no build.tgz $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH
 
 notifications:
   on_success: never
