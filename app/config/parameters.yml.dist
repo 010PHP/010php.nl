@@ -18,9 +18,9 @@ parameters:
     # A secret key that's used to generate certain security-related tokens
     secret:            ThisTokenIsNotSoSecretChangeIt
 
-    twitter_consumer_key: ~
-    twitter_consumer_secret: ~
-    twitter_access_token: ~
-    twitter_access_token_secret: ~
+    twitter_consumer_key: default_value
+    twitter_consumer_secret: default_value
+    twitter_access_token: default_value
+    twitter_access_token_secret: default_value
     meetup:
-          key: ~
+          key: default_value
