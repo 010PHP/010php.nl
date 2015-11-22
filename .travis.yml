@@ -25,8 +25,8 @@ after_success:
   - mkdir build
   - mv * build
   - tar -czf build.tgz build
-  - export SSHPASS=$deploy_password
-  - sshpass -e scp -o stricthostkeychecking=no build.tgz $deploy_username@$deploy_host:$deploy_path
+  - export SSHPASS=$DEPLOY_PASSWORD
+  - sshpass -e scp -o stricthostkeychecking=no build.tgz $DEPLOY_USERNAME@$DEPLOY_SERVER:/$DEPLOY_PATH
 
 notifications:
   on_success: never
