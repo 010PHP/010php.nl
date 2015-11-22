@@ -1,14 +1,15 @@
 <?php
 namespace OhTenPHP\Website\SiteBundle\Tests\Services;
 
+use Endroid\Twitter\Twitter;
 use OhTenPHP\Website\SiteBundle\Services\TwitterService;
-use PHPUnit_Framework_TestCase;
+use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 /**
  * Class TwitterServiceTest
  * @package OhTenPHP\Website\SiteBundle\Tests\Services
  */
-class TwitterServiceTest extends PHPUnit_Framework_TestCase
+class TwitterServiceTest extends KernelTestCase
 {
     protected $twitterService;
     protected $insert = [
@@ -17,7 +18,13 @@ class TwitterServiceTest extends PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
-        $this->twitterService = new TwitterService();
+        self::bootKernel();
+        $this->twitterService = static::$kernel->getContainer()->get('oh_ten_php_website_site.twitter');
+    }
+
+    public function testEnsureTwitterClientInstance()
+    {
+        $this->assertInstanceOf(TwitterService::class, $this->twitterService);
     }
 
     public function testSetTwitterClient()
@@ -29,9 +36,17 @@ class TwitterServiceTest extends PHPUnit_Framework_TestCase
     public function testGetLatestTweets()
     {
         $mockeryMock = \Mockery::mock('AnInexistentClass');
-        $mockeryMock->shouldReceive('getTimeline')->once()
+        $mockeryMock
+            ->shouldReceive('getTimeline')->once()
             ->andReturn($this->insert);
         $this->twitterService->setTwitterClient($mockeryMock);
         $this->assertEquals($this->insert, $this->twitterService->getLatestTweets());
+    }
+
+
+    public function tearDown()
+    {
+        self::ensureKernelShutdown();
+        unset($this->twitterService);
     }
 }
