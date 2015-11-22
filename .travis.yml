@@ -10,10 +10,24 @@ before_script:
 env:
   - TEST_CONFIG="app/phpunit.xml.dist"
 
-script: ./bin/security-checker security:check
-script: phpunit -c $TEST_CONFIG --colors --coverage-text
-script: ./bin/phpmd src/ text codesize,naming
+addons:
+  apt:
+    packages:
+      - sshpass
+
+script:
+  - ./bin/security-checker security:check
+  - phpunit -c $TEST_CONFIG --colors --coverage-text
+  - ./bin/phpmd src/ text codesize,naming
+
+after_success:
+  - export SYMFONY_ENV=prod && composer install --no-dev -o
+  - mkdir build
+  - mv * build
+  - tar -czf build.tgz build
+  - export SSHPASS=$deploy_password
+  - sshpass -e scp -o stricthostkeychecking=no build.tgz $deploy_username@$deploy_host:$deploy_path
 
 notifications:
-    on_success: never
-    on_failure: always
+  on_success: never
+  on_failure: always
