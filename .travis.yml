@@ -9,6 +9,8 @@ before_script:
 
 env:
   - TEST_CONFIG="app/phpunit.xml.dist"
+  - BUILD_FOLDER="deploy"
+  - BUILD_FILE="new_build"
 
 addons:
   apt:
@@ -22,12 +24,14 @@ script:
 
 after_success:
   - export SYMFONY_ENV=prod && composer install --no-dev -o
-  - mkdir build
-  - find . -maxdepth 1 | grep -vE "build|.|.."| xargs -i mv {} ./build
-  - tar -czf build.tgz build
+  - mkdir $BUILD_FOLDER
+  - find . -maxdepth 1 | grep -vE "$BUILD_FOLDER|.|.."| xargs -i mv {} ./$BUILD_FOLDER
+  - tar -czf $BUILD_FILE.tgz build
   - export SSHPASS=$DEPLOY_PASS
-  - sshpass -e scp -o stricthostkeychecking=no build.tgz $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH
-  - sshpass -e scp -o stricthostkeychecking=no ssh $DEPLOY_USER@$DEPLOY_HOST tar -xzf $DEPLOY_PATH/build.tgz -C $DEPLOY_PROD_PATH
+  - sshpass -e scp -o stricthostkeychecking=no $BUILD_FILE.tgz $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH
+  - sshpass -e scp -o stricthostkeychecking=no ssh $DEPLOY_USER@$DEPLOY_HOST tar -xzf $DEPLOY_PATH/$BUILD_FILE.tgz
+  - sshpass -e scp -o stricthostkeychecking=no ssh $DEPLOY_USER@$DEPLOY_HOST rm $DEPLOY_PATH/$BUILD_FILE.tgz
+  - sshpass -e scp -o stricthostkeychecking=no ssh $DEPLOY_USER@$DEPLOY_HOST shopt -s dotglob && mv $DEPLOY_PATH/* $DEPLOY_PROD_PATH/.
 
 notifications:
   on_success: never
