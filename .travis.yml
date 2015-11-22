@@ -12,7 +12,7 @@ env:
 
 script: ./bin/security-checker security:check
 script: phpunit -c $TEST_CONFIG --colors --coverage-text
-script: ./bin/phpmd src/ text codesize,unusedcode,naming
+script: ./bin/phpmd src/ text codesize,naming
 
 notifications:
     on_success: never
