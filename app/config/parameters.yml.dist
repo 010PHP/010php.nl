@@ -16,11 +16,11 @@ parameters:
     mailer_password:   ~
 
     # A secret key that's used to generate certain security-related tokens
-    secret:            ThisTokenIsNotSoSecretChangeIt
+    secret:            "%token.secret%"
 
-    twitter_consumer_key: default_value
-    twitter_consumer_secret: default_value
-    twitter_access_token: default_value
-    twitter_access_token_secret: default_value
+    twitter_consumer_key: "%twitter.consumer.key%"
+    twitter_consumer_secret: "%twitter.consumer.secret%"
+    twitter_access_token: "%twitter.access.token%"
+    twitter_access_token_secret: "%twitter.access.secret"
     meetup:
-          key: default_value
+          key: "%meetup.key%"
