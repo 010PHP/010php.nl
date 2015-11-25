@@ -1,51 +1,40 @@
 <?php
+
 namespace OhTenPHP\Website\SiteBundle\Services;
 
-/**
- * Class TwitterService
- * @package OhTenPHP\Website\SiteBundle\Services
- */
+use Endroid\Twitter\Twitter;
+
 class TwitterService
 {
     /**
-     * Holds the default amount to retrieve from the twitter timeline.
+     * Holds the amount to retrieve from the twitter timeline.
      */
-    const DEFAULT_TIMELINE_COUNT = 5;
+    const TIMELINE_COUNT = 5;
 
     /**
-     * Holds the twitter client object
-     * @var
+     * Holds the twitter client object.
+     *
+     * @var Twitter
      */
-    protected $twitterClient;
+    private $client;
 
     /**
-     * Returns the latest tweets from the defined user timeline
-     * @param int $count
+     * @param Twitter $client
+     */
+    public function __construct(Twitter $client)
+    {
+        $this->client = $client;
+    }
+
+    /**
+     * Returns the latest tweets from the defined user timeline.
+     *
      * @return mixed
      */
-    public function getLatestTweets($count = self::DEFAULT_TIMELINE_COUNT)
+    public function getLatestTweets()
     {
-        $twitter = $this->getTwitterClient();
-        return $twitter->getTimeline([
-            'count' => $count,
+        return $this->client->getTimeline([
+            'count' => self::TIMELINE_COUNT,
         ]);
-    }
-
-    /**
-     * Returns the twitter client object
-     * @return mixed
-     */
-    public function getTwitterClient()
-    {
-        return $this->twitterClient;
-    }
-
-    /**
-     * Sets the twitter client object
-     * @param mixed $twitterClient
-     */
-    public function setTwitterClient($twitterClient)
-    {
-        $this->twitterClient = $twitterClient;
     }
 }

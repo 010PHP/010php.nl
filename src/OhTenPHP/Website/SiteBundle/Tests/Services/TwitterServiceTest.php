@@ -12,9 +12,6 @@ use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 class TwitterServiceTest extends KernelTestCase
 {
     protected $twitterService;
-    protected $insert = [
-        'foo' => 'bar'
-    ];
 
     protected function setUp()
     {
@@ -27,20 +24,19 @@ class TwitterServiceTest extends KernelTestCase
         $this->assertInstanceOf(TwitterService::class, $this->twitterService);
     }
 
-    public function testSetTwitterClient()
-    {
-        $this->twitterService->setTwitterClient($this->insert);
-        $this->assertEquals($this->insert, $this->twitterService->getTwitterClient());
-    }
-
     public function testGetLatestTweets()
     {
-        $mockeryMock = \Mockery::mock('AnInexistentClass');
+        $expected = [
+            ['text' => 'hello world'],
+        ];
+
+        $mockeryMock = \Mockery::mock(Twitter::class);
         $mockeryMock
             ->shouldReceive('getTimeline')->once()
-            ->andReturn($this->insert);
-        $this->twitterService->setTwitterClient($mockeryMock);
-        $this->assertEquals($this->insert, $this->twitterService->getLatestTweets());
+            ->andReturn($expected);
+
+        $service = new TwitterService($mockeryMock);
+        $this->assertEquals($expected, $service->getLatestTweets());
     }
 
 

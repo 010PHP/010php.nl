@@ -10,9 +10,7 @@
 
         <service class="OhTenPHP\Website\SiteBundle\Services\TwitterService"
                  id="oh_ten_php_website_site.services.twitter_service">
-            <call method="setTwitterClient">
-                <argument id="endroid.twitter" type="service"/>
-            </call>
+            <argument id="endroid.twitter" type="service"/>
         </service>
 
         <service class="OhTenPHP\Website\SiteBundle\Services\MeetupService"
