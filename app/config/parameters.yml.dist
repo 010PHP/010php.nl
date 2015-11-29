@@ -12,9 +12,10 @@ parameters:
     mailer_user:       ~
     mailer_password:   ~
 
-    twitter_consumer_key: "%twitter.consumer.key%"
-    twitter_consumer_secret: "%twitter.consumer.secret%"
-    twitter_access_token: "%twitter.access.token%"
-    twitter_access_token_secret: "%twitter.access.secret%"
+    twitter_consumer_key: "OTAyYTA2NGM2YjAyMDljZmJlMDcxMmE4"
+    twitter_consumer_secret: "ZmU2ODU2ODYyOWRiMTM5ZmRjOTBiMGE3"
+    twitter_access_token: "ODY4YjM4NmZhZWE1MTFkMDE2ODc4MzM0"
+    twitter_access_token_secret: "OTlmNzFhNjA0MTBhMWViZWQ3ODgwYzRk"
 
-    meetup_key: "%meetup.key%"
+    meetup:
+        key: "ZTcxZDBkNDFiZjY5NWI4ZmRkMTg5Yjg2"
