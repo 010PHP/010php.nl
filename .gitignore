@@ -3,6 +3,7 @@
 /app/logs/
 /app/cache/
 /app/bootstrap.php.cache
+/app/config/parameters.yml
 /web/fonts
 /web/js
 /web/css
