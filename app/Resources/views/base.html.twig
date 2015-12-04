@@ -29,9 +29,11 @@
     <![endif]-->
 </head>
 <body>
-{% include(':layout:navbar-xs.html.twig') %}
-{% include(':layout:header.html.twig') %}
-{% include(':layout:navbar.html.twig') %}
+<header id="header" role="banner">
+    {% include(':layout:header/navbar.html.twig') %}
+</header><!--/#header-->
+{% include(':layout:header/carousel.html.twig') %}
+
 <div class="container">
     <div class="col-lg-9">
         {% block body %}{% endblock %}
