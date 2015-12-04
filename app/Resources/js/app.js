@@ -1,13 +1,17 @@
 jQuery(function ($) {
-    // Carousel slider
+    /**
+     * Carousel slider
+     */
     $(function () {
         $('#main-slider.carousel').carousel({
-            interval: 10000,
+            interval: 5000,
             pause: false
         });
     });
 
-    //smooth scroll
+    /**
+     * smooth scroll
+     */
     $('.navbar-nav > li').click(function (event) {
         event.preventDefault();
         var target = $(this).find('>a').prop('hash');
@@ -16,7 +20,9 @@ jQuery(function ($) {
         }, 500);
     });
 
-    //scrollspy
+    /**
+     * scroll spy
+     */
     $('[data-spy="scroll"]').each(function () {
         var $spy = $(this).scrollspy('refresh')
     });
