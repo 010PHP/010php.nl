@@ -47,10 +47,10 @@
 </section>
 <section id="content">
     <div class="container">
-        <div class="box">
+        <div class="box last">
             <div class="row">
                 <div class="col-lg-9">
-                    {% include(':layout:meetup.html.twig') %}
+                    {% include(':layout:meetup-countdown.html.twig') %}
                     {% block body %}{% endblock %}
                 </div>
                 <div class="col-lg-3">
@@ -60,6 +60,15 @@
         </div>
     </div>
 </section>
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                &copy; 2014 - 2015 010PHP. All Rights Reserved. No developers were harmed in the making of this site.
+            </div>
+        </div>
+    </div>
+</footer><!--/#footer-->
 <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

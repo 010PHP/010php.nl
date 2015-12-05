@@ -14,6 +14,10 @@
   filter: progid:DXImageTransform.Microsoft.Shadow(Strength=1, Direction=135, Color=#505050);
 }
 
+.center {
+  text-align: center;
+}
+
 #header {
   position: fixed;
   top: 0;
@@ -251,17 +255,42 @@
 .box {
   padding: 50px 30px;
   background: #fff;
-  border-bottom: 1px solid #e9e9e9;
   position: relative;
   &.first {
     margin-top: -40px;
     border-radius: 5px 5px 0 0;
   }
   &.last {
+    border-bottom: 1px solid #e9e9e9;
     border-radius: 0 0 5px 5px;
   }
 }
+
 #introduction .box {
   padding-bottom: 0;
   padding-top: 0;
+}
+
+.meetup-countdown {
+  padding: 36px 0;
+  background: @orange;
+  color: white;
+  hr {
+    width: 90%;
+  }
+}
+
+#footer {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: #999;
+  .container {
+    padding-left: 25px;
+  }
+  a {
+    color: #999;
+    &:hover {
+      color: #52b6ec;
+    }
+  }
 }
