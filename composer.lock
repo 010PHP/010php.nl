@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c733228401f62b7d00ed1c6f0f61784a",
-    "content-hash": "10e71839735c208a2b4d41bd4084c9ee",
+    "hash": "d67d90c624b74ba63a6d8d6dd825ed46",
+    "content-hash": "01b52b6e19a30bd7f8606a9d4830fb45",
     "packages": [
         {
             "name": "dms/meetup-api-client",
@@ -2506,6 +2506,67 @@
                 "sessions"
             ],
             "time": "2015-08-02 06:31:49"
+        },
+        {
+            "name": "tedivm/stash-bundle",
+            "version": "v0.5.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tedious/TedivmStashBundle.git",
+                "reference": "a54d8042616798239ec535a93240a55677b88d05"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tedious/TedivmStashBundle/zipball/a54d8042616798239ec535a93240a55677b88d05",
+                "reference": "a54d8042616798239ec535a93240a55677b88d05",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "symfony/config": ">=2.1,<3.0",
+                "symfony/dependency-injection": ">=2.1,<3.0",
+                "symfony/http-kernel": ">=2.1,<3.0",
+                "tedivm/stash": "0.13.*"
+            },
+            "require-dev": {
+                "doctrine/cache": "~1.0",
+                "fabpot/php-cs-fixer": "0.4.0",
+                "phpunit/phpunit": "4.1.*",
+                "satooshi/php-coveralls": "dev-master"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Tedivm\\StashBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Robert Hafner",
+                    "email": "tedivm@tedivm.com"
+                },
+                {
+                    "name": "Josh Hall-Bachner",
+                    "email": "jhallbachner@gmail.com"
+                }
+            ],
+            "description": "Incorporates the Stash caching library into Symfony.",
+            "homepage": "http://github.com/tedious/TedivmStashBundle",
+            "keywords": [
+                "apc",
+                "cache",
+                "caching",
+                "memcached",
+                "redis",
+                "sessions",
+                "stash",
+                "symfony"
+            ],
+            "time": "2015-11-19 17:24:15"
         },
         {
             "name": "twig/extensions",

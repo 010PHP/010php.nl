@@ -3,6 +3,7 @@
 namespace OhTenPHP\Website\SiteBundle\Services;
 
 use Endroid\Twitter\Twitter;
+use Stash\Pool;
 
 class TwitterService
 {
@@ -12,6 +13,11 @@ class TwitterService
     const TIMELINE_COUNT = 5;
 
     /**
+     * Hold the time (in seconds) to cache the tweets.
+     */
+    const FIVE_MINUTES = 300;
+
+    /**
      * Holds the twitter client object.
      *
      * @var Twitter
@@ -19,11 +25,18 @@ class TwitterService
     private $client;
 
     /**
-     * @param Twitter $client
+     * @var Pool
      */
-    public function __construct(Twitter $client)
+    private $cache;
+
+    /**
+     * @param Twitter $client
+     * @param Pool    $cache
+     */
+    public function __construct(Twitter $client, Pool $cache)
     {
         $this->client = $client;
+        $this->cache = $cache;
     }
 
     /**
@@ -33,8 +46,21 @@ class TwitterService
      */
     public function getLatestTweets()
     {
-        return $this->client->getTimeline([
+        $cache = $this->cache->getItem(__METHOD__);
+        if (!$cache->isMiss()) {
+            return $cache->get();
+        }
+
+        $latestTweets = $this->client->getTimeline([
             'count' => self::TIMELINE_COUNT,
         ]);
+
+        if (isset($latestTweets['errors'])) {
+            throw new \RuntimeException($latestTweets['errors'][0]->message);
+        }
+
+        $cache->set($latestTweets, self::FIVE_MINUTES);
+
+        return $latestTweets;
     }
 }
