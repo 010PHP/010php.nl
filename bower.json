@@ -1,0 +1,22 @@
+{
+  "name": "010php.nl",
+  "description": "The PHP Usergroup of Rotterdam",
+  "main": "",
+  "authors": [
+    "Roberto Gardenier <roberto@caroga.net>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/010PHP/010php.nl",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery.countdown": "~2.1.0"
+  }
+}
