@@ -18,6 +18,7 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new OhTenPHP\Website\SiteBundle\OhTenPHPWebsiteSiteBundle(),
             new Endroid\Bundle\TwitterBundle\EndroidTwitterBundle(),
+            new Tedivm\StashBundle\TedivmStashBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
