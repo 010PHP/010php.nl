@@ -84,3 +84,9 @@ endroid_twitter:
     consumer_secret:        "%twitter_consumer_secret%"
     access_token:           "%twitter_access_token%"
     access_token_secret:    "%twitter_access_token_secret%"
+
+stash:
+    drivers: [ FileSystem ]
+    FileSystem:
+        dirSplit: 3
+        path: "%kernel.root_dir%/cache/%kernel.environment%/stash"
