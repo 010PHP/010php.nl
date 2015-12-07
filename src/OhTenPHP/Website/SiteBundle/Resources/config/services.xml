@@ -16,6 +16,12 @@
 
         <service class="OhTenPHP\Website\SiteBundle\Services\MeetupService"
                  id="oh_ten_php_website_site.services.meetup_service">
+            <argument id="oh_ten_php_website_site.meetup_client" type="service"/>
+            <argument id="stash" type="service"/>
+        </service>
+
+        <service class="OhTenPHP\Website\SiteBundle\Services\MeetupService"
+                 id="oh_ten_php_website_site.meetup_client">
             <factory class="DMS\Service\Meetup\MeetupKeyAuthClient" method="factory"/>
             <argument>%meetup%</argument>
         </service>
