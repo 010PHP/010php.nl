@@ -34,7 +34,7 @@ class Extension extends \Twig_Extension
             return '';
         }
 
-        return '<i class="glyphicon glyphicon-refresh"></i> <a href="https://twitter.com/'.$tweet->user->screen_name.'">'.$tweet->user->name.'</a> Retweeted<br>';
+        return '<a href="https://twitter.com/'.$tweet->user->screen_name.'">'.$tweet->user->name.'</a>';
     }
 
     public function filterTweetText($tweet)
