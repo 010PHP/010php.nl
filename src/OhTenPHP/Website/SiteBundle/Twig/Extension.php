@@ -65,8 +65,9 @@ class Extension extends \Twig_Extension
         }
 
         $body = htmlentities($tweet->text, ENT_COMPAT, 'utf-8');
-        $body = preg_replace('#(https?://[^\s"]+)#', '<a href="\1">\1</a>', $body);
-        $body = preg_replace('#@([A-Za-z0-9]+)#', '<a href="https://twitter.com/\1">@\1</a>', $body);
+        $body = preg_replace('~(https?://[^\s"]+)~', '<a href="\1">\1</a>', $body);
+        $body = preg_replace('~@([A-Za-z0-9]+)~', '<a href="https://twitter.com/\1">@\1</a>', $body);
+        $body = preg_replace('~#([A-Za-z0-9]+)~', '<a href="https://twitter.com/hashtag/\1">#\1</a>', $body);
 
         return $body;
     }
