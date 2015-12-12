@@ -19,6 +19,13 @@ class Extension extends \Twig_Extension
         ];
     }
 
+    /**
+     * Provide the user that posted the tweet. If the tweet is retweeted, then the original author is returned.
+     *
+     * @param \stdClass $tweet
+     *
+     * @return string
+     */
     public function filterTweetUser($tweet)
     {
         if (isset($tweet->retweeted_status)) {
@@ -28,6 +35,13 @@ class Extension extends \Twig_Extension
         return '<a href="https://twitter.com/'.$tweet->user->screen_name.'">'.$tweet->user->name.' <small class="text-muted">@'.$tweet->user->screen_name.'</small></a>';
     }
 
+    /**
+     * Provide a link to the user that retweeted.
+     *
+     * @param \stdClass $tweet
+     *
+     * @return string
+     */
     public function filterRetweet($tweet)
     {
         if (!isset($tweet->retweeted_status)) {
@@ -37,6 +51,13 @@ class Extension extends \Twig_Extension
         return '<a href="https://twitter.com/'.$tweet->user->screen_name.'">'.$tweet->user->name.'</a>';
     }
 
+    /**
+     * Converts links and twitter handles to links.
+     *
+     * @param \stdClass $tweet
+     *
+     * @return string
+     */
     public function filterTweetText($tweet)
     {
         if (isset($tweet->retweeted_status)) {
