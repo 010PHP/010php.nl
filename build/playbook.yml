@@ -19,6 +19,15 @@
       - { role: geerlingguy.mysql }
       - { role: geerlingguy.composer }
     tasks:
+      - name: Remove existing cache folder
+        file: "state=absent path=/vagrant/app/cache"
+
+      - name: Create cache folder
+        file: "state=directory path=/tmp/cache owner=www-data group=www-data"
+
+      - name: Symlink cache to support locks
+        file: "state=link src=/tmp/cache path=/vagrant/app/cache"
+
       - name: Deploy nginx configuration
         template: >
           src=templates/vhost.j2

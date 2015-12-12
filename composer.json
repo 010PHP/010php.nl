@@ -4,7 +4,8 @@
     "type": "project",
     "description": "The 010PHP Website",
     "autoload": {
-        "psr-4": { "": "src/" }
+        "psr-4": { "": "src/" },
+        "files": [ "app/AppKernel.php" ]
     },
     "stability": "stable",
     "require": {
