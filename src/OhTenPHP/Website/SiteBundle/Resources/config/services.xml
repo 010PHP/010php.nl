@@ -8,6 +8,10 @@
             <tag name="twig.extension"/>
         </service>
 
+        <service id="oh_ten_php_website_site.twig.extension" class="OhTenPHP\Website\SiteBundle\Twig\Extension">
+            <tag name="twig.extension"/>
+        </service>
+
         <service class="OhTenPHP\Website\SiteBundle\Services\TwitterService"
                  id="oh_ten_php_website_site.services.twitter_service">
             <argument id="endroid.twitter" type="service"/>
