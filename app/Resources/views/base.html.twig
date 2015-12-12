@@ -5,6 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}010PHP | The PHP User Group of Rotterdam!{% endblock %}</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('img/apple-icon-57x57.png') }}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('img/apple-icon-60x60.png') }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('img/apple-icon-72x72.png') }}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('img/apple-icon-76x76.png') }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('img/apple-icon-114x114.png') }}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('img/apple-icon-120x120.png') }}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('img/apple-icon-144x144.png') }}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('img/apple-icon-152x152.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('img/apple-icon-180x180.png') }}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('img/android-icon-192x192.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('img/favicon-96x96.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('img/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ asset('manifest.json') }}">
+    <meta name="msapplication-TileImage" content="{{ asset('img/ms-icon-144x144.png') }}">
 
     <!-- Theme file -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -14,18 +29,46 @@
     <![endif]-->
 </head>
 <body>
-{% include(':layout:navbar-xs.html.twig') %}
-{% include(':layout:header.html.twig') %}
-{% include(':layout:navbar.html.twig') %}
-<div class="container">
-    <div class="col-lg-9">
-        {% block body %}{% endblock %}
-        {% include(':layout:meetup.html.twig') %}
+<header id="header" role="banner">
+    {% include(':layout:header/navbar.html.twig') %}
+</header><!--/#header-->
+{% include(':layout:header/carousel.html.twig') %}
+
+<section id="introduction">
+    <div class="container">
+        <div class="box first">
+            <div class="row">
+                <div class="col-lg-12">
+                    {% include(':layout:introduction.html.twig') %}
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-lg-3">
-        {% include(':layout:sidebar.html.twig') %}
+</section>
+<section id="content">
+    <div class="container">
+        <div class="box last">
+            <div class="row">
+                <div class="col-lg-9">
+                    {% include(':layout:meetup-countdown.html.twig') %}
+                    {% block body %}{% endblock %}
+                </div>
+                <div class="col-lg-3">
+                    {% include(':layout:sidebar.html.twig') %}
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+</section>
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                &copy; 2014 - 2015 010PHP. All Rights Reserved. No developers were harmed in the making of this site.
+            </div>
+        </div>
+    </div>
+</footer><!--/#footer-->
 <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

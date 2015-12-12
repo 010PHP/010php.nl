@@ -3,6 +3,7 @@
   "dependencies": {
     "bootstrap-less": "^3.3.8",
     "bootstrap-select": "^1.7.4",
+    "bower": "^1.6.9",
     "font-awesome": "^4.4.0",
     "gulp": "^3.8.8",
     "gulp-cli": "^0.3.0",

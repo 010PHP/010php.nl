@@ -15,7 +15,7 @@ class DefaultController extends Controller
     public function indexAction()
     {
         return [
-            'meetups' => $this->get('oh_ten_php_website_site.meetup')->getEvents(array('group_urlname' => '010PHP')),
+            'meetup' => $this->get('oh_ten_php_website_site.meetup')->getNextEvent(),
             'tweets' => $this->get('oh_ten_php_website_site.twitter')->getLatestTweets(),
         ];
     }

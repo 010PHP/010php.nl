@@ -4,6 +4,7 @@ namespace OhTenPHP\Website\SiteBundle\Tests\Services;
 use Endroid\Twitter\Twitter;
 use OhTenPHP\Website\SiteBundle\Services\TwitterService;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
+use Stash\Pool;
 
 /**
  * Class TwitterServiceTest
@@ -34,8 +35,9 @@ class TwitterServiceTest extends KernelTestCase
         $mockeryMock
             ->shouldReceive('getTimeline')->once()
             ->andReturn($expected);
+        $mockedStashPool = new Pool();
 
-        $service = new TwitterService($mockeryMock);
+        $service = new TwitterService($mockeryMock, $mockedStashPool);
         $this->assertEquals($expected, $service->getLatestTweets());
     }
 

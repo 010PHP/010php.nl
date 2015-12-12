@@ -1,26 +1,21 @@
-# This file is a "template" of what your parameters.yml file should look like
-# Set parameters here that may be different on each deployment target of the app, e.g. development, staging, production.
-# http://symfony.com/doc/current/best_practices/configuration.html#infrastructure-related-configuration
 parameters:
+    secret:            ThisTokenIsNotSoSecretChangeIt
+
     database_host:     127.0.0.1
     database_port:     ~
     database_name:     symfony
     database_user:     root
     database_password: ~
-    # You should uncomment this if you want use pdo_sqlite
-    # database_path: "%kernel.root_dir%/data.db3"
 
     mailer_transport:  smtp
     mailer_host:       127.0.0.1
     mailer_user:       ~
     mailer_password:   ~
 
-    # A secret key that's used to generate certain security-related tokens
-    secret:            ThisTokenIsNotSoSecretChangeIt
+    twitter_consumer_key: "OTAyYTA2NGM2YjAyMDljZmJlMDcxMmE4"
+    twitter_consumer_secret: "ZmU2ODU2ODYyOWRiMTM5ZmRjOTBiMGE3"
+    twitter_access_token: "ODY4YjM4NmZhZWE1MTFkMDE2ODc4MzM0"
+    twitter_access_token_secret: "OTlmNzFhNjA0MTBhMWViZWQ3ODgwYzRk"
 
-    twitter_consumer_key: default_value
-    twitter_consumer_secret: default_value
-    twitter_access_token: default_value
-    twitter_access_token_secret: default_value
     meetup:
-          key: default_value
+        key: "ZTcxZDBkNDFiZjY5NWI4ZmRkMTg5Yjg2"
