@@ -1,12 +1,11 @@
 ---
-- name: Include OS-specific variables.
-  include_vars: "{{ ansible_os_family }}.yml"
+  - name: Include variables.
+    include_vars: "vars.yml"
 
-- name: Define server_packages.
-  set_fact:
-    server_packages: "{{ __server_packages | list }}"
-  when: server_packages is not defined
+  - name: Define servertools_packages.
+    set_fact:
+      servertools_packages: "{{ __servertools_packages | list }}"
+    when: servertools_packages is not defined
 
-# Setup/install tasks.
-- include: setup-Debian.yml
-  when: ansible_os_family == 'Debian'
+  # Setup/install tasks.
+  - include: setup.yml
