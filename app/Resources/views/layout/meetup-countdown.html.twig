@@ -3,10 +3,11 @@
         <div class="col-lg-12 center">
             <h2>{{ meetup.name }}</h2>
             <hr>
-            <h3>Starts in 05 days, 07 hours, 42 minutes, 36 seconds</h3>
+            <h3 id="finalCountdownTimer"></h3>
+            <span id="finalCountdownTimerTimeytime" class="hidden">{{ meetup.time }}</span>
             <p>{{ meetup.yes_rsvp_count }} coders already signed up!</p>
-            <p>
-                <a class="btn btn-success btn-lg" href="{{ meetup.event_url }}">Attend our Meetup!</a>
+            <p style="margin-top:18px;">
+                <a class="btn-meetup btn-meetup-primary btn-meetup-lg raised" href="{{ meetup.event_url }}" target="_blank">Attend our Meetup!</a>
             </p>
         </div>
     </div>
@@ -24,7 +25,7 @@
         {% for attendee in rsvpList %}
             {% if attendee.member_photo is defined %}
                 <img src="{{ attendee.member_photo.photo_link }}" title="{{ attendee.member.name }}"
-                                       class="img-responsive masonryItem">
+                     class="img-responsive masonryItem">
             {% endif %}
         {% endfor %}
 
