@@ -308,3 +308,27 @@
     }
   }
 }
+.meetupMasonry{
+  width: 100%;
+  margin: 0 auto;
+}
+
+@masonryColumns: 10;
+@masonryColumnsGap: 2px;
+.meetupMasonryPictures {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  -moz-column-count: @masonryColumns;
+  -moz-column-gap: @masonryColumnsGap;
+  -webkit-column-count: @masonryColumns;
+  -webkit-column-gap: @masonryColumnsGap;
+  column-count: @masonryColumns;
+  column-gap: @masonryColumnsGap;
+  width: 100%;
+  img{
+    display: inline-block;
+    margin-bottom: 0;
+    width: 100%;
+  }
+}
