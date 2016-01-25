@@ -20,6 +20,8 @@ var lessPaths = [
  **/
 var jsPaths = [
     nodeDir + "/jquery/dist/jquery.min.js",
+    nodeDir + "/packery/dist/packery.pkgd.min.js",
+    nodeDir + "/jquery-countdown/dist/jquery.countdown.min.js",
     nodeDir + "/bootstrap-less/js/bootstrap.min.js",
     nodeDir + "/bootstrap-select/dist/js/bootstrap-select.min.js",
     'app/Resources/js/**/*.js'

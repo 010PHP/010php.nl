@@ -17,6 +17,7 @@ class DefaultController extends Controller
         return [
             'meetup' => $this->get('oh_ten_php_website_site.meetup')->getNextEvent(),
             'tweets' => $this->get('oh_ten_php_website_site.twitter')->getLatestTweets(),
+            'rsvpList' => $this->get('oh_ten_php_website_site.meetup')->getRsvpListForNextEvent(),
         ];
     }
 }
