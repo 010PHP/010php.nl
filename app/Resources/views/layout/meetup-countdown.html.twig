@@ -19,13 +19,14 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-lg-12" class="meetupMasonry">
-        <ul class="meetupMasonryPictures">
-            {% for attendee in rsvpList %}
-                {% if attendee.member_photo is defined %}
-                    <li><img src="{{ attendee.member_photo.photo_link }}" title="{{ attendee.member.name }}" class="img-responsive"></li>
-                {% endif %}
-            {% endfor %}
-        </ul>
+    <div class="col-lg-12 js-packery" id="masonryContainer"
+         data-packery-options='{ "itemSelector": ".masonryItem", "gutter": 0 }'>
+        {% for attendee in rsvpList %}
+            {% if attendee.member_photo is defined %}
+                <img src="{{ attendee.member_photo.photo_link }}" title="{{ attendee.member.name }}"
+                                       class="img-responsive masonryItem">
+            {% endif %}
+        {% endfor %}
+
     </div>
 </div>
