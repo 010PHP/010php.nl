@@ -28,6 +28,7 @@
 }
 
 .navbar-default {
+  height: 30px;
   padding: 0;
   -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2);
   -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2);
@@ -38,37 +39,24 @@
     border-radius: 0 0 0 5px;
   }
   .navbar-brand {
-    //margin-right: 50px;
-    margin-left: 20px;
+    padding: 0 20px;
     width: 120px;
-    height: 78px;
+    img {
+      width: 80px;
+      padding-top: 4px;
+    }
   }
   .navbar-nav > li {
     margin-left: 1px;
     > a {
-      padding: 30px 25px;
-      font-size: 16px;
-      line-height: 18px;
+      font-size: 12px;
       color: #999;
+      text-transform: uppercase;
       > i {
         display: inline-block;
       }
     }
   }
-}
-
-.navbar-default .navbar-nav > li.active > a,
-.navbar-default .navbar-nav > li.active:focus > a,
-.navbar-default .navbar-nav > li.active:hover > a,
-.navbar-default .navbar-nav > li:hover > a,
-.navbar-default .navbar-nav > li:focus > a,
-.navbar-default .navbar-nav > li.active > a:focus,
-.navbar-default .navbar-nav > li.active:focus > a:focus,
-.navbar-default .navbar-nav > li.active:hover > a:focus,
-.navbar-default .navbar-nav > li:hover > a:focus,
-.navbar-default .navbar-nav > li:focus > a:focus {
-  background-color: lighten(@green, 10%); //#52b6ec;
-  color: #fff;
 }
 
 #main-slider {
