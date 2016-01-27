@@ -16,6 +16,9 @@ class Extension extends \Twig_Extension
             new \Twig_SimpleFilter('retweet', [$this, 'filterRetweet'], [
                 'is_safe' => ['html'],
             ]),
+            new \Twig_SimpleFilter('meetupSafePhotoLink', [$this, 'filterMeetupSafePhotoLink'], [
+                'is_safe' => ['html'],
+            ]),
         ];
     }
 
@@ -70,6 +73,17 @@ class Extension extends \Twig_Extension
         $body = preg_replace('~#([A-Za-z0-9]+)~', '<a href="https://twitter.com/hashtag/\1">#\1</a>', $body);
 
         return $body;
+    }
+
+    /**
+     * Filters meetup profile photo urls and change them to use the safe url
+     * @param $link
+     * @return mixed
+     */
+    public function filterMeetupSafePhotoLink($link)
+    {
+        $link = preg_replace('~(^http\:\/\/.+\.meetupstatic)~', 'https://www.meetupstatic', $link);
+        return $link;
     }
 
     /**
