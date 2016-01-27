@@ -24,10 +24,9 @@
          data-packery-options='{ "itemSelector": ".masonryItem", "gutter": 0 }'>
         {% for attendee in rsvpList %}
             {% if attendee.member_photo is defined %}
-                <img src="{{ attendee.member_photo.photo_link }}" title="{{ attendee.member.name }}"
+                <img src="{{ attendee.member_photo.photo_link|meetupSafePhotoLink }}" title="{{ attendee.member.name }}"
                      class="img-responsive masonryItem">
             {% endif %}
         {% endfor %}
-
     </div>
 </div>
