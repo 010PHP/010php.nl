@@ -25,7 +25,7 @@ We use Symfony, NPM, Bower, Gulp en some other automagically tools. Below is a s
  2. Install more project dependencies with `npm install`.
  3. Now uh... install MORE project dependencies `./node_modules/.bin/bower install`.
  4. Now compile the assets. `./node_modules/.bin/gulp` (add `watch` after this command if you want to automagically build your assets during development changes).
- 5. Add `192.168.2.2 010php.vm` to your hosts file.
+ 5. Add `192.168.50.20 010php.vm` to your hosts file.
   
 Some general guidelines
 ---
