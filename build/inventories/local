@@ -1,2 +1,2 @@
 [development]
-010php.vm ansible_ssh_host=192.168.2.2
+010php.vm ansible_ssh_host=192.168.50.20
