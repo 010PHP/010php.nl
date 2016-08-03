@@ -1,8 +1,8 @@
 <?php
 
-namespace OhTenPHP\Website\SiteBundle\Tests\Services;
+namespace OhTenPHP\WebsiteBundle\Tests\Services;
 
-use OhTenPHP\Website\SiteBundle\Services\MeetupService;
+use OhTenPHP\WebsiteBundle\Service\MeetupService;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 /**
@@ -15,7 +15,7 @@ class MeetupServiceTest extends KernelTestCase
     public function setUp()
     {
         self::bootKernel();
-        $this->meetupClient = static::$kernel->getContainer()->get('oh_ten_php_website_site.services.meetup_service');
+        $this->meetupClient = static::$kernel->getContainer()->get('oh_ten_php_website.service.meetup_service');
     }
 
     public function testEnsureMeetupClientInstance()

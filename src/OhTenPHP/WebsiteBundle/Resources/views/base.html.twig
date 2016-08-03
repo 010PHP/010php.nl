@@ -30,16 +30,16 @@
 </head>
 <body>
 <header id="header">
-    {% include(':layout:header/navbar.html.twig') %}
+    {% include('OhTenPHPWebsiteBundle:layout/header:navbar.html.twig') %}
 </header><!--/#header-->
-{% include(':layout:header/carousel.html.twig') %}
+{% include('OhTenPHPWebsiteBundle:layout/header:carousel.html.twig') %}
 
 <section id="introduction">
     <div class="container">
         <div class="box first">
             <div class="row">
                 <div class="col-lg-12">
-                    {% include(':layout:introduction.html.twig') %}
+                    {% include('OhTenPHPWebsiteBundle:layout:introduction.html.twig') %}
                 </div>
             </div>
         </div>
@@ -50,12 +50,12 @@
         <div class="box last">
             <div class="row">
                 <div class="col-lg-9">
-                    {% include(':layout:meetup-countdown.html.twig') %}
+                    {% include('OhTenPHPWebsiteBundle:layout:meetup-countdown.html.twig') %}
                     {% block body %}{% endblock %}
-                    {% include(':layout:sponsors.html.twig') %}
+                    {% include('OhTenPHPWebsiteBundle:layout:sponsors.html.twig') %}
                 </div>
                 <div class="col-lg-3">
-                    {% include(':layout:sidebar.html.twig') %}
+                    {% include('OhTenPHPWebsiteBundle:layout:sidebar.html.twig') %}
                 </div>
             </div>
         </div>

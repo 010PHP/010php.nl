@@ -1,13 +1,13 @@
 <?php
 
-namespace OhTenPHP\Website\SiteBundle\Services;
+namespace OhTenPHP\WebsiteBundle\Service;
 
 use DMS\Service\Meetup\MeetupKeyAuthClient;
 use Stash\Pool;
 
 /**
  * Class MeetupService
- * @package OhTenPHP\Website\SiteBundle\Services
+ * @package OhTenPHP\WebsiteBundle\Services
  */
 class MeetupService
 {
@@ -32,7 +32,7 @@ class MeetupService
     /**
      * MeetupService constructor.
      * @param MeetupKeyAuthClient $client
-     * @param Pool                $cache
+     * @param Pool $cache
      */
     public function __construct(MeetupKeyAuthClient $client, Pool $cache)
     {

@@ -1,8 +1,8 @@
 <?php
 
-namespace OhTenPHP\Website\SiteBundle\Tests\Twig;
+namespace OhTenPHP\WebsiteBundle\Tests\Twig;
 
-use OhTenPHP\Website\SiteBundle\Twig\Extension;
+use OhTenPHP\WebsiteBundle\Twig\Extension;
 
 class ExtensionTest extends \PHPUnit_Framework_TestCase
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace OhTenPHP\Website\SiteBundle\Twig;
+namespace OhTenPHP\WebsiteBundle\Twig;
 
 class Extension extends \Twig_Extension
 {
