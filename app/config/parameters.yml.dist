@@ -12,11 +12,6 @@ parameters:
     mailer_user:       ~
     mailer_password:   ~
 
-    twitter_consumer_key: "ChangeMe"
-    twitter_consumer_secret: "ChangeMe"
-    twitter_access_token: "ChangeMe"
-    twitter_access_token_secret: "ChangeMe"
-
     meetup:
         key: "ChangeMe"
         scheme: "https"

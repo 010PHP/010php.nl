@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a5543b3cd107ea7fd5a7f1ddc07948a3",
-    "content-hash": "3f5fb7b2f1ec10c822a1d58a825b57c4",
+    "hash": "ea3ebf58b17317a24bb640c0dcacf919",
+    "content-hash": "bff5b0c2ae5742f451bc2f81e2205863",
     "packages": [
         {
             "name": "dms/meetup-api-client",
@@ -831,110 +831,6 @@
             "time": "2016-01-05 21:34:58"
         },
         {
-            "name": "endroid/twitter",
-            "version": "1.1.7",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/endroid/Twitter.git",
-                "reference": "3273567736a76896fca33a019f439183c60d5f43"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/endroid/Twitter/zipball/3273567736a76896fca33a019f439183c60d5f43",
-                "reference": "3273567736a76896fca33a019f439183c60d5f43",
-                "shasum": ""
-            },
-            "require": {
-                "kriswallsmith/buzz": "^0.6",
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Endroid\\Twitter\\": [
-                        "src/",
-                        "tests/"
-                    ]
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Jeroen van den Enden",
-                    "email": "info@endroid.nl",
-                    "homepage": "http://endroid.nl/"
-                }
-            ],
-            "description": "Endroid Twitter",
-            "homepage": "https://github.com/endroid/Twitter",
-            "keywords": [
-                "endroid",
-                "twitter"
-            ],
-            "time": "2016-01-01 19:39:08"
-        },
-        {
-            "name": "endroid/twitter-bundle",
-            "version": "1.1.7",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/endroid/EndroidTwitterBundle.git",
-                "reference": "927e61edfdfda97ac688803665f0c6c382ed4828"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/endroid/EndroidTwitterBundle/zipball/927e61edfdfda97ac688803665f0c6c382ed4828",
-                "reference": "927e61edfdfda97ac688803665f0c6c382ed4828",
-                "shasum": ""
-            },
-            "require": {
-                "endroid/twitter": "~1.0",
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Endroid\\Bundle\\TwitterBundle\\": [
-                        "src/",
-                        "tests/"
-                    ]
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Jeroen van den Enden",
-                    "email": "info@endroid.nl",
-                    "homepage": "http://endroid.nl/"
-                }
-            ],
-            "description": "Endroid Twitter Bundle for Symfony",
-            "homepage": "https://github.com/endroid/EndroidTwitterBundle",
-            "keywords": [
-                "bundle",
-                "endroid",
-                "symfony",
-                "twitter"
-            ],
-            "time": "2016-01-01 19:40:29"
-        },
-        {
             "name": "guzzle/guzzle",
             "version": "v3.9.3",
             "source": {
@@ -1249,51 +1145,6 @@
                 "minification"
             ],
             "time": "2015-11-12 13:51:40"
-        },
-        {
-            "name": "kriswallsmith/buzz",
-            "version": "v0.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/kriswallsmith/Buzz.git",
-                "reference": "4b0c0865f7db5a744c9bec64f154536cab7dfcf7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/kriswallsmith/Buzz/zipball/4b0c0865f7db5a744c9bec64f154536cab7dfcf7",
-                "reference": "4b0c0865f7db5a744c9bec64f154536cab7dfcf7",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "suggest": {
-                "ext-curl": "*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Buzz": "lib/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Kris Wallsmith",
-                    "email": "kris.wallsmith@gmail.com",
-                    "homepage": "http://kriswallsmith.net/"
-                }
-            ],
-            "description": "Lightweight HTTP client",
-            "homepage": "https://github.com/kriswallsmith/Buzz",
-            "keywords": [
-                "curl",
-                "http client"
-            ],
-            "time": "2012-05-25 13:19:16"
         },
         {
             "name": "monolog/monolog",

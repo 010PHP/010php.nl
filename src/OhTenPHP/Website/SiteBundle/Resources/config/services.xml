@@ -12,12 +12,6 @@
             <tag name="twig.extension"/>
         </service>
 
-        <service class="OhTenPHP\Website\SiteBundle\Services\TwitterService"
-                 id="oh_ten_php_website_site.services.twitter_service">
-            <argument id="endroid.twitter" type="service"/>
-            <argument id="stash" type="service"/>
-        </service>
-
         <service class="OhTenPHP\Website\SiteBundle\Services\MeetupService"
                  id="oh_ten_php_website_site.services.meetup_service">
             <argument id="oh_ten_php_website_site.meetup_client" type="service"/>
@@ -31,7 +25,6 @@
         </service>
 
         <!--Service aliases-->
-        <service id="oh_ten_php_website_site.twitter" alias="oh_ten_php_website_site.services.twitter_service"/>
         <service id="oh_ten_php_website_site.meetup" alias="oh_ten_php_website_site.services.meetup_service"/>
     </services>
 </container>
