@@ -17,7 +17,6 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Tedivm\StashBundle\TedivmStashBundle(),
-            new Endroid\Bundle\TwitterBundle\EndroidTwitterBundle(),
             new OhTenPHP\Website\SiteBundle\OhTenPHPWebsiteSiteBundle(),
         );
 

@@ -1,20 +1,6 @@
 <ul class="timeline">
-    {% for tweet in tweets %}
-        <li>
-            <div class="timeline-panel">
-                <div class="timeline-heading">
-                    <h4 class="timeline-title">{{ tweet|tweetUser }}</h4>
-                    <p><small class="text-muted">
-                        {% if (tweet|retweet) %}
-                            <i class="glyphicon glyphicon-refresh"></i> {{ tweet|retweet }} Retweeted<br>
-                        {% endif %}
-                        <i class="glyphicon glyphicon-time"></i> {{ tweet.created_at|time_diff }}
-                    </small></p>
-                </div>
-                <div class="timeline-body">
-                    <p>{{ tweet|tweetText }}</p>
-                </div>
-            </div>
-        </li>
-    {% endfor %}
+  <a class="twitter-timeline" data-lang="en" data-dnt="true" href="https://twitter.com/010php" data-tweet-limit="5">
+    Tweets by 010php
+  </a>
+  <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 </ul>
