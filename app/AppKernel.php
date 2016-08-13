@@ -17,7 +17,7 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Tedivm\StashBundle\TedivmStashBundle(),
-            new OhTenPHP\Website\SiteBundle\OhTenPHPWebsiteSiteBundle(),
+            new OhTenPHP\WebsiteBundle\OhTenPHPWebsiteBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

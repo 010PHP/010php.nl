@@ -1,0 +1,22 @@
+services:
+    app.twig.extension.date:
+      class: 'Twig_Extensions_Extension_Date'
+      tags:
+        - { name: 'twig.extension' }
+
+    oh_ten_php_website.twig.extension:
+      class: 'OhTenPHP\WebsiteBundle\Twig\Extension'
+      tags:
+        - { name: 'twig.extension' }
+
+    oh_ten_php_website.meetup_client:
+      class: 'OhTenPHP\WebsiteBundle\Service\MeetupService'
+      factory: ['DMS\Service\Meetup\MeetupKeyAuthClient', factory]
+      arguments: ['%meetup%']
+
+    oh_ten_php_website.service.meetup_service:
+      class: 'OhTenPHP\WebsiteBundle\Service\MeetupService'
+      arguments: ['@oh_ten_php_website.meetup_client', '@stash']
+
+    oh_ten_php_website.service.meetup:
+      alias: 'oh_ten_php_website.service.meetup_service'
