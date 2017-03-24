@@ -8,10 +8,9 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-
         $meetup = $this->get('website.services.meetup');
         dump($meetup->nextEvent());
 
-        return $this->render('WebsiteBundle:Default:index.html.twig');
+        return $this->render('WebsiteBundle::index.html.twig', ['meetup'=>$meetup->nextEvent()]);
     }
 }

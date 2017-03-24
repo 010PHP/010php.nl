@@ -20,7 +20,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('img/favicon-16x16.png') }}">
     <link rel="manifest" href="{{ asset('manifest.json') }}">
     <meta name="msapplication-TileImage" content="{{ asset('img/ms-icon-144x144.png') }}">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Theme file -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <!--[if lt IE 9]>
@@ -30,16 +30,23 @@
 </head>
 <body>
 <header id="header">
-    {% include('OhTenPHPWebsiteBundle:layout/header:navbar.html.twig') %}
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="{{ asset('img/logo/logo-small.png') }}" alt="010PHP The Usergroup of Rotterdam!" class="img-responsive logo">
+        </a>
+    </div>
+    <div class="navbar-holder">
+    {% include('WebsiteBundle:layout:navbar.html.twig') %}
+    </div>
 </header><!--/#header-->
-{% include('OhTenPHPWebsiteBundle:layout/header:carousel.html.twig') %}
-
+<section id="banner" style="background-image: url('https://a248.e.akamai.net/secure.meetupstatic.com/photos/event/2/c/4/1/highres_455951329.jpeg');"></section>
+<!--/#banner -->
 <section id="content">
     <div class="container">
         <div class="box last">
             <div class="row">
                 <div class="col-lg-9">
-                    {% include('WebsiteBundle:layout:meetup-countdown.html.twig') %}
+                    {#{% include('WebsiteBundle:layout:meetup-countdown.html.twig') %}#}
                     {% block body %}{% endblock %}
                     {% include('WebsiteBundle:layout:sponsors.html.twig') %}
                 </div>
