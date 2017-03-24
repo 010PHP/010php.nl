@@ -47,7 +47,6 @@
 
 .navbar-default {
     padding: 0;
-    margin: 0 0 0 400px;
     border-radius: 0px;
     background: transparent;
     color: #FFF;
@@ -55,6 +54,7 @@
 }
 
 .navbar-nav{
+    margin: 0 0 0 400px;
     display: flex;
     width: 100%;
 }
