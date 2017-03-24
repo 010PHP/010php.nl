@@ -13,6 +13,7 @@
     },
     "require": {
         "php": ">=5.5.9",
+        "dms/meetup-api-client": "^2.3",
         "doctrine/doctrine-bundle": "^1.6",
         "doctrine/doctrine-cache-bundle": "^1.2",
         "doctrine/doctrine-migrations-bundle": "^1.2",
@@ -24,6 +25,7 @@
         "symfony/polyfill-apcu": "^1.0",
         "symfony/swiftmailer-bundle": "^2.3.10",
         "symfony/symfony": "3.2.*",
+        "tedivm/stash-bundle": "^0.6.2",
         "twig/twig": "^1.0||^2.0"
     },
     "require-dev": {

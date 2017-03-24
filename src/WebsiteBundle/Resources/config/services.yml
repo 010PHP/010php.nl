@@ -1,4 +1,10 @@
 services:
-#    website.example:
-#        class: WebsiteBundle\Example
-#        arguments: ["@service_id", "plain_value", "%parameter%"]
+
+  website.meetup_client:
+      class: DMS\Service\Meetup\MeetupKeyAuthClient
+      factory: [DMS\Service\Meetup\MeetupKeyAuthClient, factory]
+      arguments: ['%meetup%']
+
+  website.services.meetup:
+      class: WebsiteBundle\Services\Meetup
+      arguments: ['@website.meetup_client', '@stash', '%meetup%']
