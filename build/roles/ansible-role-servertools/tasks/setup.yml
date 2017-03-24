@@ -1,7 +1,0 @@
----
-  - name: Ensure system packages are installed.
-    apt: >
-      name="{{ item }}"
-      state="latest"
-      update_cache="yes"
-    with_items: servertools_packages

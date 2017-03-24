@@ -1,1 +1,0 @@
-./bin/phpunit -c app/phpunit.xml --colors --coverage-text

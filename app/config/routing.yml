@@ -1,3 +1,0 @@
-oh_ten_php_website:
-    resource: "@OhTenPHPWebsiteBundle/Resources/config/routing.yml"
-    prefix:   /

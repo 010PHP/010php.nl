@@ -1,3 +1,0 @@
-oh_ten_php_website_homepage:
-    path:     /
-    defaults: { _controller: OhTenPHPWebsiteBundle:Home:index }
