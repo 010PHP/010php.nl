@@ -1,0 +1,37 @@
+<div class="meetup-countdown">
+    <div class="row">
+        <div class="col-lg-12 center">
+            <h2>{{ meetup.name }}</h2>
+            {% if meetup.venue is defined %}
+                <p>{{ meetup.venue.name }}, {{ meetup.venue.address_1 }} {{ meetup.venue.city }}</p>
+            {% endif %}
+            <hr>
+            <h3 id="finalCountdownTimer"></h3>
+            <span id="finalCountdownTimerTimeytime" class="hidden">{{ meetup.time }}</span>
+            <p>{{ meetup.yes_rsvp_count }} coders already signed up!</p>
+            <p style="margin-top:18px;">
+                <a class="btn-meetup btn-meetup-primary btn-meetup-lg raised" href="{{ meetup.event_url }}" target="_blank">Attend our Meetup!</a>
+            </p>
+        </div>
+    </div>
+</div>
+{% if meetup.venue is defined %}
+    <div class="row">
+        <div class="col-lg-12">
+            <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="100%" height="200"
+                    src="https://maps.google.com/maps?hl=en&q={{ meetup.venue.address_1 }}&ie=UTF8&t=roadmap&z=12&iwloc=B&output=embed">
+            </iframe>
+        </div>
+    </div>
+{% endif %}
+<div class="row">
+    <div class="col-lg-12 js-packery" id="masonryContainer"
+         data-packery-options='{ "itemSelector": ".masonryItem", "gutter": 0 }'>
+        {% for attendee in rsvpList %}
+            {% if attendee.member_photo is defined %}
+                <img src="{{ attendee.member_photo.photo_link|meetupSafePhotoLink }}" title="{{ attendee.member.name }}"
+                     class="img-responsive masonryItem">
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
